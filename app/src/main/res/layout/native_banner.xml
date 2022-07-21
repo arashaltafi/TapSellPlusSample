@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp">
+
+        <RelativeLayout
+            android:id="@+id/rvHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/tapsell_nativead_logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Logo" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tapsell_nativead_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tapsell_nativead_logo"
+                android:layout_toLeftOf="@id/tapsell_nativead_logo"
+                android:layout_toRightOf="@id/tapsell_nativead_sponsored"
+                android:gravity="right"
+                android:paddingRight="4dp"
+                android:text="Title"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tapsell_nativead_sponsored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tapsell_nativead_logo"
+                android:layout_alignParentLeft="true"
+                android:background="#dedede"
+                android:padding="3dp"
+                android:text="Sponsored"
+                android:textColor="#aaaaaa"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tapsell_nativead_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvHeader"
+            android:text="توضیحات این تبلیغ"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <ir.tapsell.sdk.nativeads.views.RatioImageView
+            android:id="@+id/tapsell_nativead_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tapsell_nativead_description"
+            android:contentDescription="Banner"
+            app:aspect_ratio="0.5625"
+            app:aspect_style="fixed_width" />
+
+        <ir.tapsell.plus.adNetworks.admob.AdMobMediaView
+            android:id="@+id/tapsell_nativead_banner_admob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tapsell_nativead_description"
+            android:contentDescription="Banner" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tapsell_nativead_cta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tapsell_nativead_banner"
+            android:layout_marginTop="40dp"
+            android:text="Btn" />
+
+    </RelativeLayout>
+
+</com.google.android.gms.ads.nativead.NativeAdView>

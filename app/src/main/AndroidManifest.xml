@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.arash.altafi.tapsellplussample">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TapSellPlusSample"
+        tools:targetApi="31">
+        <activity
+            android:name=".RewardedVideoActivity"
+            android:label="@string/rewarded_video" />
+        <activity
+            android:name=".InterstitialActivity"
+            android:label="@string/interstitial" />
+        <activity
+            android:name=".NativeBannerActivity"
+            android:label="@string/native_banner" />
+        <activity
+            android:name=".StandardBannerActivity"
+            android:label="@string/standard_banner" />
+        <activity
+            android:name=".NativeBannerInListActivity"
+            android:label="@string/native_banner_in_list" />
+        <activity
+            android:name=".VastActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NativeVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--  Such thing is needed when using Admob v20.x - Please visit https://docs.tapsell.ir/plus-sdk/android/add-adnetworks/ for more info -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+    </application>
+
+</manifest>
